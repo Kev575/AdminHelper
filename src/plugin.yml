@@ -1,0 +1,10 @@
+name: AdminHelper
+version: 1.0
+main: kev575.adminhelper.Main
+commands:
+  getip:
+    aliases: [getplayerip]
+  getping:
+    aliases: [ping]
+  getlang:
+    aliases: [lang]
