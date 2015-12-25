@@ -11,6 +11,3 @@ Commands:
 * /getip [player] » get IP of players » adminhelper.getip and adminhelper.getip.others  
 * /getping [player] » get ping of players » adminhelper.getping and adminhelper.getping.others  
 * /getlang [player] » get selected lang of players » adminhelper.getlang and adminhelper.getlang.others  
-  
-  
-Copyright 2015 Kev575
