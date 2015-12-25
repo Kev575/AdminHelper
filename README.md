@@ -12,5 +12,9 @@ Commands:
 * /getping [player] » get ping of players » adminhelper.getping and adminhelper.getping.others  
 * /getlang [player] » get selected lang of players » adminhelper.getlang and adminhelper.getlang.others  
   
+To-Do:  
+- [ ] improve command system  
+- [x] /getlang  
+  
   
 Copyright 2015 Kev575
