@@ -4,6 +4,9 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.net.InetSocketAddress;
 
+import net.minecraft.server.v1_8_R3.EntityPlayer;
+import net.minecraft.server.v1_8_R3.Packet;
+
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -42,7 +45,6 @@ public class AdminHelperAPI {
 	 * 
 	 * @return ping of @parm p; type int; ping >= 0  
 	 */
-	
 	public int getPing(Player p) {
 		return ((CraftPlayer)p).getHandle().ping;
 	}
@@ -63,5 +65,14 @@ public class AdminHelperAPI {
 		}
 	}
 	private Method getMethod(String name, Class<?> clazz) {for (Method m : clazz.getDeclaredMethods()) {if (m.getName().equals(name))return m;}return null;}
+	
+	@SuppressWarnings("rawtypes")
+	public void sendPacket(Player player, Packet packet) {
+		getHandle(player).playerConnection.sendPacket(packet);
+	}
+	
+	public EntityPlayer getHandle(Player player) {
+		return ((CraftPlayer)player).getHandle();
+	}
 	
 }
