@@ -30,7 +30,7 @@ public class Main extends JavaPlugin {
 				if (sender instanceof Player) {
 					Player p = (Player) sender;
 					if (!p.hasPermission("adminhelper.getip")) {p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$cYou don't have the permission to do that."));return true;}
-					p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3IPv4 of $e" + p.getName() + "$8: $a" + new AdminHelperAPI(this).getIP(p)));
+					p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3IPv4 of $eyou$8: $a" + new AdminHelperAPI(this).getIP(p)));
 				} else {
 					sender.sendMessage("/getip <Player>");
 				}
@@ -54,7 +54,7 @@ public class Main extends JavaPlugin {
 				if (sender instanceof Player) {
 					Player p = (Player) sender;
 					if (!p.hasPermission("adminhelper.getping")) {p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$cYou don't have the permission to do that."));return true;}
-					p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3Ping of $e" + p.getName() + "$8: $a" + new AdminHelperAPI(this).getPing(p)));
+					p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3Ping of $eyou$8: $a" + new AdminHelperAPI(this).getPing(p)));
 				} else {
 					sender.sendMessage("/getping <Player>");
 				}
@@ -78,7 +78,7 @@ public class Main extends JavaPlugin {
 				if (sender instanceof Player) {
 					Player p = (Player) sender;
 					if (!p.hasPermission("adminhelper.getlang")) {p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$cYou don't have the permission to do that."));return true;}
-					p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3Selected language of $e" + p.getName() + "$8: $a" + new AdminHelperAPI(this).getLanguage(p)));
+					p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3Selected language of $eyou$8: $a" + new AdminHelperAPI(this).getLanguage(p)));
 				} else {
 					sender.sendMessage("/getlang [Player]");
 				}
