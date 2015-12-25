@@ -46,7 +46,7 @@ public class Main extends JavaPlugin {
 					return true;
 				}
 				Player p = (Player) of;
-				p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3IPv4 of $e" + p.getName() + "$8: $a" + new AdminHelperAPI(this).getIP(p)));
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3IPv4 of $e" + p.getName() + "$8: $a" + new AdminHelperAPI(this).getIP(p)));
 			}
 		}
 		if (cmd.getName().equalsIgnoreCase("getping")) {
@@ -70,7 +70,7 @@ public class Main extends JavaPlugin {
 					return true;
 				}
 				Player p = (Player) of;
-				p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3Ping of $e" + p.getName() + "$8: $a" + new AdminHelperAPI(this).getPing(p)));
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3Ping of $e" + p.getName() + "$8: $a" + new AdminHelperAPI(this).getPing(p)));
 			}
 		}
 		if (cmd.getName().equalsIgnoreCase("getlang")) {
@@ -94,7 +94,7 @@ public class Main extends JavaPlugin {
 					return true;
 				}
 				Player p = (Player) of;
-				p.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3Selected language of $e" + p.getName() + "$8: $a" + new AdminHelperAPI(this).getLanguage(p)));
+				sender.sendMessage(ChatColor.translateAlternateColorCodes('$', "$3Selected language of $e" + p.getName() + "$8: $a" + new AdminHelperAPI(this).getLanguage(p)));
 			}
 		}
 		return true;
