@@ -7,7 +7,9 @@ import java.net.InetSocketAddress;
 import net.minecraft.server.v1_8_R3.EntityPlayer;
 import net.minecraft.server.v1_8_R3.Packet;
 
+import org.bukkit.GameMode;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftPlayer;
+import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
@@ -37,6 +39,18 @@ public class AdminHelperAPI {
 	public String getIP(Player p) {
 		InetSocketAddress a = p.getAddress();
 		return a.getAddress().getHostAddress();
+	}
+	
+	/**
+	 * 
+	 * REQUIRES v1_8_R3 of Spigot
+	 * 
+	 * @param p Player
+	 * @param e Which entity sould be spectated from <b>p</b>
+	 */
+	public void spectate(Player p, Entity e) {
+		p.setGameMode(GameMode.SPECTATOR);
+		((CraftPlayer)p).getHandle().setSpectatorTarget((net.minecraft.server.v1_8_R3.Entity) e);
 	}
 	
 	/**
