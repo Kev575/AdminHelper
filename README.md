@@ -15,6 +15,9 @@ Commands:
 To-Do:  
 - [ ] improve command system  
 - [x] /getlang  
+- [x] spectate  
+- [ ] add config  
+- [ ] LEAVE ME ToDo PLEASE xD ^^
   
   
 Copyright 2015 Kev575
