@@ -13,14 +13,15 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
+@Deprecated
 public class AdminHelperAPI {
 
 	private Plugin p;
-	
+	@Deprecated
 	public AdminHelperAPI(Plugin p) {
 		if (p == null) return;
 		if (!p.isEnabled()) {
-			new Exception("[AdminHelperAPI] Plugin " + p.getName() + " is not enabled.");
+			throw new IllegalStateException("[AdminHelperAPI] Plugin " + p.getName() + " is not enabled.");
 		}
 		this.p = p;
 	}
@@ -36,6 +37,7 @@ public class AdminHelperAPI {
 	 * @param p Player
 	 * @return 0.0.0.0 to 255.255.255.255
 	 */
+	@Deprecated
 	public String getIP(Player p) {
 		InetSocketAddress a = p.getAddress();
 		return a.getAddress().getHostAddress();
@@ -48,6 +50,7 @@ public class AdminHelperAPI {
 	 * @param p Player
 	 * @param e Which entity sould be spectated from <b>p</b>
 	 */
+	@Deprecated
 	public void spectate(Player p, Entity e) {
 		p.setGameMode(GameMode.SPECTATOR);
 		((CraftPlayer)p).getHandle().setSpectatorTarget((net.minecraft.server.v1_8_R3.Entity) e);
@@ -59,6 +62,7 @@ public class AdminHelperAPI {
 	 * 
 	 * @return ping of @parm p; type int; ping >= 0  
 	 */
+	@Deprecated
 	public int getPing(Player p) {
 		return ((CraftPlayer)p).getHandle().ping;
 	}
@@ -68,6 +72,7 @@ public class AdminHelperAPI {
 	 * 
 	 * @return lang e.g. en_US, fr_FR or de_DE
 	 */
+	@Deprecated
 	public String getLanguage(Player p) {
 		try {Object ep = getMethod("getHandle", p.getClass()).invoke(p, (Object[]) null);
 		Field f = ep.getClass().getDeclaredField("locale");
@@ -78,13 +83,15 @@ public class AdminHelperAPI {
 			return null;
 		}
 	}
+	@Deprecated
 	private Method getMethod(String name, Class<?> clazz) {for (Method m : clazz.getDeclaredMethods()) {if (m.getName().equals(name))return m;}return null;}
 	
 	@SuppressWarnings("rawtypes")
+	@Deprecated
 	public void sendPacket(Player player, Packet packet) {
 		getHandle(player).playerConnection.sendPacket(packet);
 	}
-	
+	@Deprecated
 	public EntityPlayer getHandle(Player player) {
 		return ((CraftPlayer)player).getHandle();
 	}
