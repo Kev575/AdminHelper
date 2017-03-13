@@ -5,3 +5,4 @@
 bin/plugin.yml
 *.htm
 bin/config.yml
+bin/*
